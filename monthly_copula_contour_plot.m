@@ -1,5 +1,4 @@
 Q = []; P = []
-Rel_Threshold = 0.9;
 
 N_plot = 100;
 nLevel = 20;
@@ -44,7 +43,7 @@ for m = 1:12
 
     [fmax, ~] = max(Fmat(:));
 
-    rel_threshold = Rel_Threshold(m);
+    rel_threshold = 0.9;
     c = rel_threshold * fmax;
 
     if useNew
