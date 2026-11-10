@@ -1,4 +1,5 @@
-Rel_Threshold = [];
+Q = []; P = []
+Rel_Threshold = 0.9;
 
 N_plot = 100;
 nLevel = 20;
@@ -53,7 +54,7 @@ for m = 1:12
         mask_valid  = mask_region & (Pmat >= P_threshold);
 
         if ~any(mask_valid(:))
-            error('Month %d: ¸ß¸ÅÂÊÇøÓòÄÚÃ»ÓĞÂú×ã P¡İ%.2f µÄµã', m, P_threshold);
+            error('Month %d: é«˜æ¦‚ç‡åŒºåŸŸå†…æ²¡æœ‰æ»¡è¶³ Pâ‰¥%.2f çš„ç‚¹', m, P_threshold);
         end
 
         Qstar = max(Qmat(mask_valid));
@@ -84,7 +85,7 @@ for m = 1:12
         end
 
         if isempty(Q_candidates)
-            error('Î´ÕÒµ½µÈÖµÏß£¬Çë½µµÍ rel_threshold£¨Èç¸ÄÎª 0.95 »ò 0.90£©');
+            error('æœªæ‰¾åˆ°ç­‰å€¼çº¿ï¼Œè¯·é™ä½ rel_thresholdï¼ˆå¦‚æ”¹ä¸º 0.95 æˆ– 0.90ï¼‰');
         end
 
         [Qstar, idx_max] = max(Q_candidates);
