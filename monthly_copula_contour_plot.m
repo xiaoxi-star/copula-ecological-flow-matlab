@@ -1,4 +1,7 @@
-Q = []; P = []
+%% Load test data
+data = readtable('data.csv');
+Q = data{:,1:12};
+P = data{:,13:24};
 
 N_plot = 100;
 nLevel = 20;
